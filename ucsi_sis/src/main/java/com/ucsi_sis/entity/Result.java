@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Formula;
 
 @Entity
 public class Result {
@@ -21,6 +24,12 @@ public class Result {
 	
 	@Column(nullable=false)
 	private double cgpa;
+	
+	@Column(nullable = false)
+	private double gpa;
+	
+	@OneToOne
+	private Student_Course studentCourse;
 	
 	
 	public Result() {
